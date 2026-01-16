@@ -1,18 +1,22 @@
 #!/bin/bash
 
-echo -e "\e[32mRunning Software!\e[0m"
+GREEN="\e[32m"
+RED="\e[31m"
+END="\e[0m"
+
+echo -e "${GREEN}Running Software!${END}"
 cd ~
 if [ -d "storage" ]
 then
   :
 else
-  echo -e "\e[31mPlease storage access!\e[0m"
+  echo -e "${RED}Please storage access!${END}"
   while [ ! -d "storage" ]
   do
     termux-setup-storage
   done
 fi
-echo -e "\e[32mUpdate and upgrade and install software's! Please wait!\e[0m"
+echo -e "${GREEN}Update and upgrade and install software's! Please wait!${END}"
 pkg update
 pkg upgrade -y -o Dpkg::Options::="--force-confdef --force-confold"
 pkg install -y python
