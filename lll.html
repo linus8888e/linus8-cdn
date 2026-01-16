@@ -11,7 +11,7 @@ if [ -d "storage" ]
 then
   :
 else
-  echo -e "${RED}Please allow the software to access your device's internal storage in order for the software to work!${END}"
+  echo -e "${RED}Please allow the software to access your device's internal storage!${END}"
   while [ ! -d "storage" ]
   do
     termux-setup-storage
