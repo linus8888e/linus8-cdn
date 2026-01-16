@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd ~
 if [ -d "storage" ]
 then
   termux-setup-storage -y
