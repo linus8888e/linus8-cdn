@@ -6,9 +6,9 @@ if [ -d "storage" ]
 then
   :
 else
+  echo -e "\e[31mPlease storage access!\e[0m"
   while [ ! -d "storage" ]
   do
-    echo -e "\e[31mPlease storage access!\e[0m"
     termux-setup-storage
   done
 fi
