@@ -16,7 +16,7 @@ else
     termux-setup-storage
   done
 fi
-echo -e "${GREEN}Update and upgrade and install software's! Please wait!${END}"
+echo -e "${GREEN}Update and upgrade and install software's!\nPlease wait!${END}"
 pkg update
 pkg upgrade -y -o Dpkg::Options::="--force-confdef --force-confold"
 pkg install -y python
