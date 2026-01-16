@@ -1,3 +1,3 @@
-while [ ! -L "$HOME/storage" ]; do
+while [ ! -d "storage" ]; do
   termux-setup-storage
 done
