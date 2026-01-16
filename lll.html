@@ -12,10 +12,18 @@ then
   :
 else
   echo -e "${RED}Please allow the software to access your device's internal storage!${END}"
-  while [ ! -d "storage" ]
+  ATTEMPT=0
+  M_ATTEMPT=10
+  while [ ! -d "storage" ] && [ $ATTEMPT -lt M_ATTEMP ]
   do
     termux-setup-storage
+    ((ATTEMPT++))
   done
+fi
+if [ ! -d "storage" ]
+then
+  echo -e "${RED}Tətbiqi silin${END}"
+  exit 1
 fi
 sleep 3
 echo -e "${GREEN}The software is downloading and installing required dependencies.\nThis may take a few minutes.\n${RED}Please do not touch anything here!${END}\n${GREEN}Please wait ...${END}"
