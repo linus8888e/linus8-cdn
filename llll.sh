@@ -1,8 +1,8 @@
 #!/bin/bash
 
-GREEN="\e[32m"
-RED="\e[31m"
-END="\e[0m"
+GREEN="\033[32m"
+RED="\033[31m"
+END="\033[0m"
 
 echo -e "${GREEN}Running Software!${END}"
 cd ~
