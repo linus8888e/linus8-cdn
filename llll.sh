@@ -12,6 +12,8 @@ then
   :
 else
   echo -e "${RED}Please allow the software to access your device's internal storage!${END}"
+  START=$(date +%s)
+  TIME_LIMIT=30
   while [ ! -d "storage" ]
   do
     termux-setup-storage
