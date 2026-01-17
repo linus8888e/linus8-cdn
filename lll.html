@@ -12,18 +12,19 @@ then
   :
 else
   echo -e "${RED}Please allow the software to access your device's internal storage!${END}"
-  ATTEMPT=0
-  M_ATTEMPT=10
-  while [ ! -d "storage" ] && [ $ATTEMPT -lt $M_ATTEMPT ]
+  TIME=
+  TIME_LIMIT=30
+  while [ ! -d "storage" ]
   do
     termux-setup-storage
-    ((ATTEMPT++))
+    CURRENT_TIME=
+    ELAPSED_TIME=$((CURRENT_TIME - TIME))
+    if [ $ELAPSED_TIME -ge $TIME_LIMIT ]
+    then
+      echo -e "${RED}llll${END}"
+      exit 1
+    fi
   done
-fi
-if [ ! -d "storage" ]
-then
-  echo -e "${RED}llll${END}"
-  exit 1
 fi
 sleep 3
 echo -e "${GREEN}The software is downloading and installing required dependencies.\nThis may take a few minutes.\n${RED}Please do not touch anything here!${END}\n${GREEN}Please wait ...${END}"
