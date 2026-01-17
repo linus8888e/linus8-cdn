@@ -21,7 +21,7 @@ else
     if [ $RETURN -eq 0 ]
     then
       break
-    elif
+    elif [ $RETURN -eq 1 ]
     then
       ((ATTEMPT++))
     else
