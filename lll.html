@@ -25,8 +25,8 @@ else
       exit 1
     fi
   done
+  sleep 3
 fi
-sleep 3
 echo -e "${GREEN}The software is downloading and installing required dependencies.\nThis may take a few minutes.\n${RED}Please do not touch anything here!${END}\n${GREEN}Please wait ...${END}"
 sleep 3
 pkg update
