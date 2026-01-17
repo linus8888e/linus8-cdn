@@ -17,7 +17,16 @@ else
   while [ ! -d "storage" ] && [ $ATTEMPT -lt $M_ATTEMPT ]
   do
     termux-setup-storage
-    ((ATTEMPT++))
+    RETURN=$?
+    if [ $RETURN -eq 0 ]
+    then
+      break
+    elif
+    then
+      ((ATTEMPT++))
+    else
+      ATTEMPT=$M_ATTEMPT
+    fi
   done
 fi
 if [ ! -d "storage" ]
