@@ -13,7 +13,7 @@ then
 else
   echo -e "${RED}Please allow the software to access your device's internal storage!${END}"
   ATTEMPT=0
-  M_ATTEMPT=44
+  M_ATTEMPT=33
   while [ ! -d "storage" ] && [ $ATTEMPT -lt $M_ATTEMPT ]
   do
     termux-setup-storage
