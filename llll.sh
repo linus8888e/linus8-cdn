@@ -22,7 +22,7 @@ else
 fi
 if [ ! -d "storage" ]
 then
-  echo -e "${RED}Tətbiqi silin${END}"
+  echo -e "${RED}llll${END}"
   exit 1
 fi
 sleep 3
