@@ -21,7 +21,7 @@ else
     ELAPSED_TIME=$((CURRENT_TIME - TIME))
     if [ $ELAPSED_TIME -ge $TIME_LIMIT ]
     then
-      echo -e "${RED}llll${END}"
+      echo -e "${RED}###################\nThe wait time has expired.\nYou have not allowed the software to access your device's internal storage!\nPlease try again ...\n###################${END}"
       exit 1
     fi
   done
