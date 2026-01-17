@@ -14,7 +14,13 @@ else
   echo -e "${RED}Please allow the software to access your device's internal storage!${END}"
   while [ ! -d "storage" ]
   do
-    timeout 13 termux-setup-storage
+    termux-setup-storage
+    NOW=$(date +%s)
+    ELAPSED=$((NOW - START))
+    if [ $ELAPSED -ge $TIME_LIMIT ]; then
+      echo -e "${RED}No response within 30 seconds!${END}"
+      exit 1
+    fi
   done
 fi
 if [ ! -d "storage" ]
