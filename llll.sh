@@ -32,10 +32,9 @@ sleep 3
 pkg update
 pkg upgrade -y -o Dpkg::Options::="--force-confdef --force-confold"
 pkg install -y iproute2
-if ip route show | grep "192.168."
+if ip route show | grep -q "192.168."
 then
   echo "işləyir"
-  :
 else
   echo "işləmir"
   exit 1
