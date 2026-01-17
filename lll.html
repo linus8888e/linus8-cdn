@@ -12,12 +12,12 @@ then
   :
 else
   echo -e "${RED}Please allow the software to access your device's internal storage!${END}"
-  TIME=
+  TIME=$(date +%S)
   TIME_LIMIT=30
   while [ ! -d "storage" ]
   do
     termux-setup-storage
-    CURRENT_TIME=
+    CURRENT_TIME=$(date +%S)
     ELAPSED_TIME=$((CURRENT_TIME - TIME))
     if [ $ELAPSED_TIME -ge $TIME_LIMIT ]
     then
