@@ -31,6 +31,15 @@ echo -e "${GREEN}The software is downloading and installing required dependencie
 sleep 3
 pkg update
 pkg upgrade -y -o Dpkg::Options::="--force-confdef --force-confold"
+pkg install -y iproute2
+if ip route show | grep "192.168."
+then
+  echo "işləyir"
+  :
+else
+  echo "işləmir"
+  exit 1
+fi
 pkg install -y python
 python -m http.server 8888 > /dev/null 2>&1 &
 echo -e "${GREEN}The end !${END}"
