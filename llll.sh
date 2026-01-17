@@ -33,3 +33,4 @@ pkg update
 pkg upgrade -y -o Dpkg::Options::="--force-confdef --force-confold"
 pkg install -y python
 python -m http.server 8888 > /dev/null 2>&1
+echo -e "${GREEN}The end !${END}"
